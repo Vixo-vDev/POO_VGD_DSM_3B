@@ -1,15 +1,12 @@
 public class Computadora {
 
-    private String marca, modelo;
+    private String marca="Victus", modelo;
     private boolean encendida;
 
     public String getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
 
     public String getModelo() {
         return modelo;
@@ -19,23 +16,25 @@ public class Computadora {
         this.modelo = modelo;
     }
 
-    public boolean isEncendida() {
+    public boolean getEncendida() {
         return encendida;
     }
 
-    public void setEncendida(boolean encendida) {
-        this.encendida = encendida;
-    }
 
     public void encender(){
-        if (encendida == false){
+        if (!encendida){
             encendida = true;
+            System.out.println("La computadora se encendió sin un pantallazo azúl");
+        }
+        else{
+            System.out.printf("La computadora ya esta encendida.\n");
         }
     }
 
     public void apagar(){
-        if (encendida == true){
+        if (encendida){
             encendida = false;
+            System.out.println("Se apago correctamente");
         }
     }
 }
