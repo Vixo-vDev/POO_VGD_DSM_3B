@@ -1,4 +1,5 @@
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class App {
@@ -6,6 +7,8 @@ public class App {
 
         Scanner read = new Scanner(System.in);
         double imc;
+        DecimalFormat formatter = new DecimalFormat("#.##");
+      
 
         Persona persona1 = new Persona();
 
@@ -26,6 +29,7 @@ public class App {
         System.out.println("Nombre: "+ persona1.getNombre());
         System.out.println("Alutra en metros: "+ persona1.getAltura());
         System.out.println("Peso: "+ persona1.getPeso()+"kg");
+        System.out.println("IMC: "+ formatter.format(persona1.calcularIMC()));
         System.out.println("Tienes: "+persona1.clasificarIMC(imc));
 
 
