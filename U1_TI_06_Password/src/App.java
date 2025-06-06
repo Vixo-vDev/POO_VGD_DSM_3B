@@ -28,15 +28,6 @@ public class App {
     else{
       System.out.println("Acceso denegado");
     }
-
-
-    exito = user1.autenticar("12345678"); //Intento incorrecto
-    if(exito){
-      System.out.println("Acceso concedido");
-    }
-    else{
-      System.out.println("Acceso denegado");
-    }
     }
     
 }
