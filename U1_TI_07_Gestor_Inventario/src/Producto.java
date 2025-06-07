@@ -43,8 +43,6 @@ public class Producto {
         }
     }
 
-
-
     public void setCodigo(String codigo) {
         validarCampo(codigo, "Ingresa nuevamente el código: ",0);
         this.codigo = codigo;

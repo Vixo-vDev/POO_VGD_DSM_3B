@@ -61,7 +61,7 @@ public class App {
                     System.out.println("===================================================");
                     System.out.print("Ingresa código para buscar producto: ");
                     code = read.nextLine();
-                    
+
                     eliminar = inventory.eliminarProducto(code);
                     if(eliminar){
                         System.out.println("Objeto eliminado con éxito");
@@ -80,17 +80,22 @@ public class App {
                     System.out.print("Ingresa código para buscar producto: ");
                     code = read.nextLine();
                     productonew = inventory.buscar(code); //OBJETO ENCONTRADO
-                    System.out.println("===================================================");
-                    System.out.println("Nombre del producto: "+ productonew.getNombre());
-                    System.out.println("Código del producto: "+ productonew.getCodigo());
-                    System.out.println("Cantidad de "+ productonew.getNombre()+": "+productonew.getCantidad()+" unidad(es)");
-                    System.out.println("===================================================");
+                    if(productonew != null){
+                        System.out.println("===================================================");
+                        System.out.println("Nombre del producto: "+ productonew.getNombre());
+                        System.out.println("Código del producto: "+ productonew.getCodigo());
+                        System.out.println("Cantidad de "+ productonew.getNombre()+": "+productonew.getCantidad()+" unidad(es)");
+                        System.out.println("===================================================");
+                    }
+                    else{
+                        System.out.println("Objeto no encontrado");
+                    }
                     System.out.println("Total de items disponibles: "+ inventory.totalItems());
 
                 
                 break;
                 default:
-                    throw new AssertionError();
+                   System.out.println("Selecciona una opción correcta 1-4");
             }
 
             System.out.println("===================================================");
