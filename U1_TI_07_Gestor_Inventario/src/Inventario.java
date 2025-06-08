@@ -17,8 +17,9 @@ public class Inventario {
         for(int i = 0; i <3; i++){
 
             if(stock[i]== null){
-
-               stock[i] = p;
+               for(int j = 0; j< p.getCantidad(); j++){
+                    stock[j] = p;
+               }
 
                return true;
             }

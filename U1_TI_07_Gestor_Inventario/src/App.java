@@ -36,9 +36,6 @@ public class App {
                     p.setCodigo(read.nextLine());
                     System.out.print("Ingresa la cantidad del producto: ");
                     p.setCantidad(read.nextInt());
-                    System.out.println(p.getNombre());
-                    System.out.println(p.getCodigo());
-                    System.out.println(p.getCantidad());
 
                     Producto productonew = new Producto(p.getCodigo(), p.getNombre(), p.getCantidad());
                         
@@ -94,6 +91,14 @@ public class App {
 
                 
                 break;
+
+                case 4:
+                    System.out.println("===================================================");
+                    System.out.println("            Total de items disponibles             ");
+                    System.out.println("===================================================");
+                    System.out.println("Items disponibles :"+ inventory.totalItems());
+                break;
+
                 default:
                    System.out.println("Selecciona una opción correcta 1-4");
             }
