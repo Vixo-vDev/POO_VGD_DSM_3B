@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -57,11 +58,12 @@ public class HelloApplication extends Application {
             String edad = tfage.getText();
 
             String rol = cbRol.getSelectionModel().getSelectedItem();
-            if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
-                lblResultado.setText("Debes ingresar todos los campos");
-            }
+
 
             try {
+                if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
+                    lblResultado.setText("Debes ingresar todos los campos");
+                }
 
                 int edadEntero = Integer.parseInt(edad);
                 if(edadEntero<=0){
@@ -93,8 +95,10 @@ public class HelloApplication extends Application {
             lblResultado.setStyle("-fx-text-fill: black;");
         });
 
+        stage.setTitle("Programa 5");
+        Image imagen = new Image(getClass().getResourceAsStream("/imagenes/taza.png"));
+        stage.getIcons().add(imagen);
         Scene scene = new Scene(root, 500, 500);
-
         stage.setScene(scene);
         stage.show();
 
