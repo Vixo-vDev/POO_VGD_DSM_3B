@@ -60,17 +60,29 @@ public class HelloApplication extends Application {
             if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
                 lblResultado.setText("Debes ingresar todos los campos");
             }
-            int edadInt = Integer.parseInt(edad);
+
+            try {
+
+                int edadEntero = Integer.parseInt(edad);
+                if(edadEntero<=0){
+                    lblResultado.setText("Debes ingresar numeros positivos");
+                }else{
+                    root.setStyle("-fx-background-color: #90EE90");
+                    lblResultado.setStyle("-fx-text-fill: blue;");
+                    lblResultado.setText("Nombre: " + nombre + "\nApellido: " + lastname + "\nEdad: " + edadEntero + "\nRol: " + rol);
+                }
+
+
+            } catch (NumberFormatException ex) {
+                lblResultado.setText("La edad debe ser un número válido");
+            }
+            });
+            /*int edadInt = Integer.parseInt(edad);
 
             if(edadInt <= 0){
                 lblResultado.setText("Debes ingresar numeros positivos");
-            }
-            else{
-                root.setStyle("-fx-background-color: #90EE90;");
-                lblResultado.setStyle("-fx-text-fill: blue;");
-                lblResultado.setText("Nombre: "+ nombre+"\nApellido:"+lastname+"\nEdad:"+edadInt+"\nRol:"+rol);
-            }
-        });
+            }*/
+
 
         btnReset.setOnAction(e ->{
             tfNombre.setText("");
