@@ -61,9 +61,6 @@ public class HelloApplication extends Application {
 
 
             try {
-                if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
-                    lblResultado.setText("Debes ingresar todos los campos");
-                }
 
                 int edadEntero = Integer.parseInt(edad);
                 if(edadEntero<=0){
@@ -76,7 +73,13 @@ public class HelloApplication extends Application {
 
 
             } catch (NumberFormatException ex) {
-                lblResultado.setText("La edad debe ser un número válido");
+                if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
+                    lblResultado.setText("Debes ingresar todos los campos");
+                }
+                else{
+                    lblResultado.setText("La edad debe ser un número válido");
+                }
+
             }
             });
             /*int edadInt = Integer.parseInt(edad);
