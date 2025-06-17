@@ -59,9 +59,7 @@ public class HelloApplication extends Application {
 
             String rol = cbRol.getSelectionModel().getSelectedItem();
 
-
             try {
-
                 int edadEntero = Integer.parseInt(edad);
                 if(edadEntero<=0){
                     lblResultado.setText("Debes ingresar numeros positivos");
