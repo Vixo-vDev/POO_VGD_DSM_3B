@@ -10,7 +10,7 @@ public class EmpleadoPorHoras extends Empleado {
 
     @Override
     public double calcularSalario() {
-
+        System.out.println("Horas trabajadas: "+ horasTrabajadas);
         return horasTrabajadas * getSalarioBase();
     }
 }

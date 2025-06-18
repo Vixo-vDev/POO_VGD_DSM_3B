@@ -6,9 +6,11 @@ public class Main {
         EmpleadoPorHoras empleadoPorHoras = new EmpleadoPorHoras("123", "David", 1000,5);
         EmpleadoTiempoCompleto empleadoTiempoCompleto = new EmpleadoTiempoCompleto("123", "David", 1000, "Seguro");
 
-        System.out.println(empleadoPorHoras.calcularSalario());
-        System.out.println("==================================");
+
         System.out.println(empleadoTiempoCompleto.calcularSalario());
+        System.out.println("==================================");
+        System.out.println(empleadoPorHoras.calcularSalario());
+
 
     }
 }
