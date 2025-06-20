@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    //Daniela Araujo Muñoz
     @Override
     public void start(Stage stage) throws IOException {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -59,33 +60,18 @@ public class HelloApplication extends Application {
 
             String rol = cbRol.getSelectionModel().getSelectedItem();
 
-            try {
-                int edadEntero = Integer.parseInt(edad);
-                if(edadEntero<=0){
-                    lblResultado.setText("Debes ingresar numeros positivos");
-                }else{
-                    root.setStyle("-fx-background-color: #90EE90");
-                    lblResultado.setStyle("-fx-text-fill: blue;");
-                    lblResultado.setText("Nombre: " + nombre + "\nApellido: " + lastname + "\nEdad: " + edadEntero + "\nRol: " + rol);
-                }
 
-
-            } catch (NumberFormatException ex) {
-                if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
-                    lblResultado.setText("Debes ingresar todos los campos");
-                }
-                else{
-                    lblResultado.setText("La edad debe ser un número válido");
-                }
-
+            if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
+                lblResultado.setText("Debes ingresar todos los campos");
             }
+
+            else{
+                root.setStyle("-fx-background-color: #90EE90");
+                lblResultado.setStyle("-fx-text-fill: blue;");
+                lblResultado.setText("Nombre: " + nombre + "\nApellido: " + lastname + "\nEdad: " + edad + "\nRol: " + rol);
+            }
+
             });
-            /*int edadInt = Integer.parseInt(edad);
-
-            if(edadInt <= 0){
-                lblResultado.setText("Debes ingresar numeros positivos");
-            }*/
-
 
         btnReset.setOnAction(e ->{
             tfNombre.setText("");

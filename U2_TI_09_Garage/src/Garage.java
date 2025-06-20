@@ -32,7 +32,7 @@ public class Garage{
     }
 
     public int contarVehiculos(){
-        int contador = 0;
+        int contador = 1;
         for(int j = 0; j < 4; j++){
             if(espacios[j] != null){
                 contador +=j;

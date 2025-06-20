@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         int vehiculos;
         Garage garage = new Garage(4);
+
         Coche coche = new Coche("3434", "Toyota", 4);
         Motocicleta moto = new Motocicleta("ERER3", "ER", true);
         Coche coche1 = new Coche("34", "Toyota", 2);
