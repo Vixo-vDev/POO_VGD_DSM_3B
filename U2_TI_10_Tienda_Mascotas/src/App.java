@@ -1,6 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+       //David Valenzuela Guijosa 3B-DSM
        Cliente cliente1 = new Cliente("David", null);
        Cliente cliente2 = new Cliente("Diego", null);
     
