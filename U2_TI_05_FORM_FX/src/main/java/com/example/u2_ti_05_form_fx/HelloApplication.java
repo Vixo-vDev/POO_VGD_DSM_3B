@@ -16,7 +16,6 @@ import javafx.scene.control.*;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-    //Daniela Araujo Muñoz
     @Override
     public void start(Stage stage) throws IOException {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -61,17 +60,26 @@ public class HelloApplication extends Application {
             String rol = cbRol.getSelectionModel().getSelectedItem();
 
 
-            if(nombre.isEmpty() || lastname.isEmpty() || edad.isEmpty() || rol.isEmpty()){
-                lblResultado.setText("Debes ingresar todos los campos");
+            try{
+                int edadInt = Integer.parseInt(edad);
+                if(nombre.isEmpty() || lastname.isEmpty() || edadInt == 0 || rol.isEmpty()){
+                    lblResultado.setText("Debes ingresar todos los campos");
+                }
+                else if(edadInt < 0){
+                    lblResultado.setText("La edad debe ser positivo");
+                }
+
+                else{
+                    root.setStyle("-fx-background-color: #90EE90");
+                    lblResultado.setStyle("-fx-text-fill: blue;");
+                    lblResultado.setText("Nombre: " + nombre + "\nApellido: " + lastname + "\nEdad: " + edad + "\nRol: " + rol);
+                }
+
+            }catch(NumberFormatException ex){
+                lblResultado.setText("La edad debe ser un número entero");
             }
 
-            else{
-                root.setStyle("-fx-background-color: #90EE90");
-                lblResultado.setStyle("-fx-text-fill: blue;");
-                lblResultado.setText("Nombre: " + nombre + "\nApellido: " + lastname + "\nEdad: " + edad + "\nRol: " + rol);
-            }
-
-            });
+        });
 
         btnReset.setOnAction(e ->{
             tfNombre.setText("");

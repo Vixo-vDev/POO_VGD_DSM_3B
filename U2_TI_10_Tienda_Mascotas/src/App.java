@@ -59,10 +59,6 @@ public class App {
             System.out.println(perro.getNombe() +" vendido correctamente");
             System.out.println("===============================================");
        }
-       else{
-        System.out.println("No existe este animal en la tienda");
-       }
-    
-    
+       
     }
 }
